@@ -2,9 +2,6 @@ import css from './Profile.module.css'
 import PropTypes from "prop-types";
 import imageNotFound from "../../images/not-found.png"
 
-
-
-console.log(css);
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     const { followers, views, likes } = stats;
 
@@ -38,16 +35,17 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
 }
 
 Profile.propTypes = {
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
-    stats: PropTypes.shape({
-        followers: PropTypes.number.isRequired,
-        views: PropTypes.number.isRequired,
-        likes: PropTypes.number.isRequired
-    })
-
-    
-
+    props: PropTypes.exact(
+        PropTypes.exact({
+            username: PropTypes.string.isRequired,
+            tag: PropTypes.string.isRequired,
+            location: PropTypes.string.isRequired,
+            avatar: PropTypes.string,
+            stats: PropTypes.exact({
+                followers: PropTypes.number.isRequired,
+                views: PropTypes.number.isRequired,
+                likes: PropTypes.number.isRequired
+            }),
+        }),
+    ),
 }
