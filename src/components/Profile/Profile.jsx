@@ -1,6 +1,6 @@
 import css from './Profile.module.css'
 import PropTypes from "prop-types";
-import imageNotFound from "../../images/not-found.png"
+import imageNotFound from "../../images/image-not-found.png"
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     const { followers, views, likes } = stats;

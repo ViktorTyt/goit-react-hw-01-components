@@ -6,7 +6,7 @@ import { FriendListItem } from 'components/FriendListItem/FriendListItem'
 export const FriendList = ({ friends }) => {
     
     return <ul className={css.list}>
-        {friends.map(({id, name, avatar, isOnline}) =>
+        {friends.map(({ id, name, avatar, isOnline }) =>
             <FriendListItem
                 key={id}
                 name={name}
@@ -14,7 +14,7 @@ export const FriendList = ({ friends }) => {
                 isOnline={isOnline}
             />
         )}
-</ul>
+    </ul>;
 }
 
 FriendList.propTypes = {
