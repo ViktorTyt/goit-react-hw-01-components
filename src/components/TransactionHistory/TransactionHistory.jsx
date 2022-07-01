@@ -11,22 +11,25 @@ export const TransactionHistory = ({ items }) => {
         </tr>
     );
 
-    return <table className={css.transactionHistory}>
-        <thead className={css.tabkeHead}>
-            <tr>
-                <th className={css.columnType}>Type</th>
-                <th>Amount</th>
-                <th>Currency</th>
-            </tr>
-        </thead>
-        <tbody className={css.tableBody}>
-            {transactionItemMarkup}
-        </tbody>
-    </table>;
+    return (
+        <table className={css.transactionHistory}>
+            <thead className={css.tabkeHead}>
+                <tr>
+                    <th className={css.columnType}>Type</th>
+                    <th>Amount</th>
+                    <th>Currency</th>
+                </tr>
+            </thead>
+            <tbody className={css.tableBody}>
+                {transactionItemMarkup}
+            </tbody>
+        </table>
+    );
+        
 }
 
 TransactionHistory.propTypes = {
-        items: PropTypes.arrayOf(
+    items: PropTypes.arrayOf(
         PropTypes.exact({
             id: PropTypes.string.isRequired,
             type: PropTypes.string.isRequired,
@@ -34,4 +37,4 @@ TransactionHistory.propTypes = {
             currency: PropTypes.string.isRequired,
         })
     )
-}
+};
